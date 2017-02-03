@@ -22,6 +22,7 @@ var newGameBtn = document.getElementById('js-newGameButton'),
 	computerResultElem = document.getElementById('js-computerResult'),
 	whoWon ='';
 
+
 function setGameElements(gameState, whoWon) { 
 	switch(gameState) { 
 		case 'started': 
@@ -96,14 +97,12 @@ function setGamePoints() {
 }
 
 function checkGameEnd(playerPoints, computerPoints) {
-	if (playerPoints == 2) {
-		console.log('player');
+	if (computerPoints == 10) {
 		gameState = 'ended';
-		whoWon = 'player';
-	} else if (computerPoints == 2) {
-		console.log('computer');
-		gameState = 'ended;'
-		whoWon = 'computer';
+		whoWon = 'komputer';
+	} else if (playerPoints == 10) {
+		gameState = 'ended';
+		whoWon = player.name;
 	};
 	setGameElements(gameState, whoWon);
 }
